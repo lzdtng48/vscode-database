@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 readcsv = pd.read_csv('salary.csv')
-
+st.title("Home App")
 
 page = st.sidebar.selectbox('Menu', ['Input Data', 'Database'])
 
