@@ -153,7 +153,7 @@ if menu == 'Submit Scores':
 if menu == "Students Database":
     editcheckbox=st.sidebar.checkbox('Edit Database')
     if editcheckbox:
-        edit_table = st.data_editor(readcsv,width=1200,height=800)
+        edit_table = st.data_editor(readcsv,width=1500,height=800)
         if st.sidebar.button("Save Database"):
             saved_edit = edit_table.to_csv('scores.csv',index=False)
             save1, save2 = st.sidebar.columns(2)
