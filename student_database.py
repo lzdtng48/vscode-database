@@ -254,7 +254,7 @@ if menu == 'Search Student':
     if findbutton: #check if button pressed
         if findID: #check if text in the box
             try:
-                searchresult = readcsv[readcsv['Student_ID'].str,lower() == findID.lower()]
+                searchresult = readcsv[readcsv['Student_ID'].str.lower() == findID.lower()]
                 # st.table(searchresult)
                 ID = searchresult['Student_ID'].iloc[0]
                 name = searchresult['Name'].iloc[0]
