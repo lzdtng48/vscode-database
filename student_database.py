@@ -253,7 +253,7 @@ if menu == 'Search Student':
 # Maths,English,Science,Art,Geography,History,Total Score,Average,Grade
     if findbutton: #check if button pressed
         if findID: #check if text in the box
-            try
+            try:
                 searchresult = readcsv[readcsv['Student_ID'].str,lower() == findID.lower()]
                 # st.table(searchresult)
                 ID = searchresult['Student_ID'].iloc[0]
