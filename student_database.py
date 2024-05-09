@@ -253,64 +253,71 @@ if menu == 'Search Student':
 # Maths,English,Science,Art,Geography,History,Total Score,Average,Grade
     if findbutton: #check if button pressed
         if findID: #check if text in the box
-            searchresult = readcsv[readcsv['Student_ID'] == findID]
-            # st.table(searchresult)
-            ID = searchresult['Student_ID'].iloc[0]
-            name = searchresult['Name'].iloc[0]
-            eng = searchresult['English'].iloc[0]
-            maths = searchresult['Maths'].iloc[0]
-            sci = searchresult['Science'].iloc[0]
-            art = searchresult['Art'].iloc[0]
-            geo = searchresult['Geography'].iloc[0]
-            hist = searchresult['History'].iloc[0]
-            total = searchresult['Total Score'].iloc[0]
-            ave = searchresult['Average'].iloc[0]
-            grade = searchresult['Grade'].iloc[0]
+            try
+                searchresult = readcsv[readcsv['Student_ID'].str,lower() == findID.lower()]
+                # st.table(searchresult)
+                ID = searchresult['Student_ID'].iloc[0]
+                name = searchresult['Name'].iloc[0]
+                eng = searchresult['English'].iloc[0]
+                maths = searchresult['Maths'].iloc[0]
+                sci = searchresult['Science'].iloc[0]
+                art = searchresult['Art'].iloc[0]
+                geo = searchresult['Geography'].iloc[0]
+                hist = searchresult['History'].iloc[0]
+                total = searchresult['Total Score'].iloc[0]
+                ave = searchresult['Average'].iloc[0]
+                grade = searchresult['Grade'].iloc[0]
 
 
 
 
-            head1,head2,head3 = st.columns([1,2,1])
-            with head2:
-                st.title(':blue[GRANGE SCHOOL]')
-                sub1,sub2,sub3 = st.columns([0.5,2,0.5])
-                with sub2:
-                    st.write(":orange[**FAUGET MODERN SCHOOL**]")
-            st.divider()
+                head1,head2,head3 = st.columns([1,2,1])
+                with head2:
+                    st.title(':blue[GRANGE SCHOOL]')
+                    sub1,sub2,sub3 = st.columns([0.5,2,0.5])
+                    with sub2:
+                        st.write(":orange[**FAUGET MODERN SCHOOL**]")
+                st.divider()
 
 
-            st.header(f':blue[{name}]')
+                st.header(f':blue[{name}]')
 
 
-            st.write("")
-            st.write("")
-            subject, score = st.columns([2,1])
+                st.write("")
+                st.write("")
+                subject, score = st.columns([2,1])
 
 
-            with subject:
-                st.subheader("Subject List")
-                st.write('Mathematics')
-                st.write('English')
-                st.write('Science')
-                st.write('Art')
-                st.write('Geography')
-                st.write('History')
-                st.write('Total')
-                st.write('Grade')
-                
-            with score:
-                st.subheader("Score")
-                st.write(f'{maths}')
-                st.write(f'{eng}')
-                st.write(f'{sci}')
-                st.write(f'{art}')
-                st.write(f'{geo}')
-                st.write(f'{hist}')
-                st.write(f'{total}')
-                st.subheader(f':orange[GRADE:] {grade}')
+                with subject:
+                    st.subheader("Subject List")
+                    st.write('Mathematics')
+                    st.write('English')
+                    st.write('Science')
+                    st.write('Art')
+                    st.write('Geography')
+                    st.write('History')
+                    st.write('Total')
+                    st.write('Grade')
+                    
+                with score:
+                    st.subheader("Score")
+                    st.write(f'{maths}')
+                    st.write(f'{eng}')
+                    st.write(f'{sci}')
+                    st.write(f'{art}')
+                    st.write(f'{geo}')
+                    st.write(f'{hist}')
+                    st.write(f'{total}')
+                last1,last2,last3 = st.columns(3)
+                with last2:
+                    st.subheader(f':orange[GRADE:] {grade}')
+
+            except:
+                with find1:
+                    st.error("ID not Found")
 
 
-       
+        
 
 
 
