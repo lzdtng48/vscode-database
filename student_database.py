@@ -186,7 +186,7 @@ if menu == "Students Database":
             with sort1:
                
                 sortsubjects = ['None','Maths','English','Science','Art','Geography','History','Total Score','Grade']
-                sort = st.selectbox('Sort DataFrame',sortsubjects,index=2)
+                sort = st.selectbox('Sort DataFrame',sortsubjects,index=0)
 
 
                             # Sort the DataFrame based on the selected order
