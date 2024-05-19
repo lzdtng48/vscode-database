@@ -14,11 +14,14 @@ if menu == ('Input Data'):
 
     save = st.button('Save Journal Entry')
 
+
     if save:
+        st.success('Saved!')
         journaldict = {'Title':[title],'Content':[content],'Date':[date],'Author':[author]}
         journaldf = pd.DataFrame(journaldict)
         newtable = pd.concat([readcsv,journaldf],ignore_index=True)
         newtable.to_csv('journal.csv',index=False)
 
 elif menu == ('Journal'):
-    st.dataframe('journal.csv')
+    st.header('Journal Entries')
+    st.table(readcsv)
