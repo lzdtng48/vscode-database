@@ -28,9 +28,6 @@ if page == 'Input Data':
 
         newtable = pd.concat([readcsv,csvdf],ignore_index=True)
         newtable.to_csv('salary.csv',index=False)
-        
-#commite
-st.write()
 
 
 if page == 'Database':
